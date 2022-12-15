@@ -1,6 +1,8 @@
 const express = require("express");
 const { fetch } = require("cross-fetch");
 
+require("dotenv").config()
+
 const app = express();
 
 app.use(express.json());
@@ -74,7 +76,7 @@ app.get("/", (req, res) => {
   });
 });
 
-const port = 3437;
+const port = process.env.PORT;
 
 app.listen(port, async () => {
   console.log("App started");
